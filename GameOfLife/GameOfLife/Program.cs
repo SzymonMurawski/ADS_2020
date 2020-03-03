@@ -15,7 +15,19 @@ namespace GameOfLife
             grid[1, 1] = true;
             for(int x= 0;x <20; x++)
             {
-                for(int y=0;y <20; y++) { }
+                for (int y = 0; y < 20; y++)
+                {
+                    if (grid[x, y] = false)
+                    {
+                        Console.WriteLine("X");
+                    }
+
+                    else if (grid[x,y] = true)
+                    {
+                        Console.WriteLine(".");
+                    }
+
+                }
             }
         }
     }
