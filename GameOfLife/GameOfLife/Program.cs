@@ -17,14 +17,14 @@ namespace GameOfLife
             {
                 for (int y = 0; y < 20; y++)
                 {
-                    if (grid[x, y] == false)
-                    {
-                        Console.Write(".");
-                    }
-
-                    else if (grid[x,y] == true)
+                    if (grid[x, y] )
                     {
                         Console.Write("x");
+                    }
+
+                    else
+                    {
+                        Console.Write(".");
                     }
 
                 }
