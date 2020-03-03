@@ -11,6 +11,7 @@ namespace GameOfLife
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Convay’s Game of Life!");
+            bool[,] grid = new bool[20, 20];
         }
     }
 }
