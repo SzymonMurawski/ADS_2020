@@ -13,6 +13,10 @@ namespace GameOfLife
             Console.WriteLine("Welcome to Convay’s Game of Life!");
             bool[,] grid = new bool[20, 20];
             grid[1, 1] = true;
+            for(int x= 0;x <20; x++)
+            {
+                for(int y=0;y <20; y++) { }
+            }
         }
     }
 }
