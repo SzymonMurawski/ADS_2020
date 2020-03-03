@@ -19,15 +19,16 @@ namespace GameOfLife
                 {
                     if (grid[x, y] = false)
                     {
-                        Console.WriteLine("X");
+                        Console.Write("X");
                     }
 
                     else if (grid[x,y] = true)
                     {
-                        Console.WriteLine(".");
+                        Console.Write(".");
                     }
 
                 }
+                Console.WriteLine("");
             }
         }
     }
