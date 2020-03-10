@@ -22,11 +22,29 @@ namespace GameOfLife
                 }
                 Console.WriteLine("");
             }
-
+            Console.WriteLine("Alive neigbours for 2,1 = " +
+                GetAliveNeighboursCount(2,1,grid));
         }
         public static int GetAliveNeighboursCount(int x,int y,bool [,] grid)
         {
-            return 0;
+            int count = 0;
+            if (grid[x - 1, y - 1] == true)
+                count++;
+            if (grid[x, y - 1] == true)
+                count++;
+            if (grid[x+1, y - 1] == true)
+                count++;
+            if (grid[x -1, y] == true)
+                count++;
+            if (grid[x + 1, y] == true)
+                count++;
+            if (grid[x-1, y + 1] == true)
+                count++;
+            if (grid[x, y +1] == true)
+                count++;
+            if (grid[x +1, y + 1] == true)
+                count++;
+            return count;
         }
     }
 }
