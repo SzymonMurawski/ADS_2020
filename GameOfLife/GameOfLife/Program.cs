@@ -26,6 +26,45 @@ namespace GameOfLife
                 GetAliveNeighboursCount(2,1,grid));
             Console.WriteLine("Alive neigbours for 0,1 = " +
                 GetAliveNeighboursCount(0, 1, grid));
+            bool[,] grid2 = new bool[20, 20];
+            for (int x = 0; x < 20; x++)
+            {
+                for (int y = 0; y < 20; y++)
+                {
+                    int AliveNeighbours = GetAliveNeighboursCount(x, y, grid);
+                    if (grid[x,y] == true)
+                    {
+                        if(AliveNeighbours == 2)
+                        {
+                            grid2[x, y] = true;
+                        }
+                        else
+                        {
+                            grid2[x, y] = false;
+                        }
+                    }
+                    else
+                    {
+                        if (AliveNeighbours == 3)
+                        {
+                            grid2[x, y] = true;
+                        } else
+                        {
+                            grid2[x, y] = false;
+                        }
+                    }
+                }
+    
+            }
+            Console.WriteLine("Next generation");
+            for (int x = 0; x < 20; x++)
+            {
+                for (int y = 0; y < 20; y++)
+                {
+                    Console.Write(grid2[x, y] ? "X" : ".");
+                }
+                Console.WriteLine("");
+            }
         }
         public static int GetAliveNeighboursCount(int x,int y,bool [,] grid)
         {
