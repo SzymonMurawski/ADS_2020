@@ -8,6 +8,7 @@ namespace GameOfLife
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Convay’s Game of Life!");
@@ -21,6 +22,11 @@ namespace GameOfLife
                 }
                 Console.WriteLine("");
             }
+
+        }
+        public static int GetAliveNeighboursCount(int x,int y,bool [,] grid)
+        {
+            return 0;
         }
     }
 }
