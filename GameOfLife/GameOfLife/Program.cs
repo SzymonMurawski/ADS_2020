@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+
 
 namespace GameOfLife
 {
@@ -17,8 +18,10 @@ namespace GameOfLife
             grid[1, 2] = true;
             grid[1, 3] = true;
             DisplayGrid(grid);
+            const int FPS = 24; // Frames per second
             for(int i = 0; i < 100; i++)
-            { 
+            {
+                Thread.Sleep(1000/FPS);
                 Console.WriteLine("Next generation");
                 grid = CalculateNewGeneration(grid);
                 DisplayGrid(grid);
