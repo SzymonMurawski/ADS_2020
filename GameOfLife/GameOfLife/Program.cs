@@ -17,9 +17,12 @@ namespace GameOfLife
             grid[1, 2] = true;
             grid[1, 3] = true;
             DisplayGrid(grid);
-            bool[,] grid2 = CalculateNewGeneration(grid);
-            Console.WriteLine("Next generation");
-            DisplayGrid(grid2);
+            for(int i = 0; i < 100; i++)
+            { 
+                Console.WriteLine("Next generation");
+                grid = CalculateNewGeneration(grid);
+                DisplayGrid(grid);
+            }
         }
 
         private static bool[,] CalculateNewGeneration(bool[,] grid)
@@ -46,6 +49,7 @@ namespace GameOfLife
 
         private static void DisplayGrid(bool[,] grid)
         {
+            Console.Clear();
             for (int x = 0; x < 20; x++)
             {
                 for (int y = 0; y < 20; y++)
