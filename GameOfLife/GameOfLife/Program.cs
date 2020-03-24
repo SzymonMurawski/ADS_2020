@@ -12,11 +12,17 @@ namespace GameOfLife
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Convay’s Game of Life!");
             bool[,] grid = new bool[20, 20];
-            grid[1, 1] = true;
-            grid[1, 2] = true;
-            grid[1, 3] = true;
+            Console.WriteLine("Welcome to Convay’s Game of Life!");
+            Console.Write("How many random alive cells should be placed: ");
+            int initialAliveCellsCount = Console.Read();
+            Random generator = new Random();
+            for (int i = 0; i < initialAliveCellsCount; i++)
+            {
+                int x = generator.Next(20);
+                int y = generator.Next(20);
+                grid[x, y] = true;
+            }
             DisplayGrid(grid, 0);
             const int FPS = 24; // Frames per second
             for(int i = 1; i < 100; i++)
