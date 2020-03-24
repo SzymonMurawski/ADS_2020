@@ -14,11 +14,9 @@ namespace GameOfLife
             Console.WriteLine("Welcome to Convay’s Game of Life!");
             bool[,] grid = new bool[20, 20];
             grid[1, 1] = true;
+            grid[1, 2] = true;
+            grid[1, 3] = true;
             DisplayGrid(grid);
-            Console.WriteLine("Alive neigbours for 2,1 = " +
-                GetAliveNeighboursCount(2, 1, grid));
-            Console.WriteLine("Alive neigbours for 0,1 = " +
-                GetAliveNeighboursCount(0, 1, grid));
             bool[,] grid2 = CalculateNewGeneration(grid);
             Console.WriteLine("Next generation");
             DisplayGrid(grid2);
