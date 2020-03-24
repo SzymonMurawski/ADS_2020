@@ -17,13 +17,13 @@ namespace GameOfLife
             grid[1, 1] = true;
             grid[1, 2] = true;
             grid[1, 3] = true;
-            DisplayGrid(grid);
+            DisplayGrid(grid, 0);
             const int FPS = 24; // Frames per second
-            for(int i = 0; i < 100; i++)
+            for(int i = 1; i < 100; i++)
             {
                 Thread.Sleep(1000/FPS);
                 grid = CalculateNewGeneration(grid);
-                DisplayGrid(grid);
+                DisplayGrid(grid, i);
                 if (AliveCellsInGrid(grid) <= 0)
                     break;
             }
@@ -51,7 +51,7 @@ namespace GameOfLife
             return newGrid;
         }
 
-        private static void DisplayGrid(bool[,] grid)
+        private static void DisplayGrid(bool[,] grid, int generationNumber)
         {
             Console.Clear();
             int aliveCells = 0;
@@ -66,6 +66,7 @@ namespace GameOfLife
                 Console.WriteLine("");
             }
             Console.WriteLine($"Alive cells: {aliveCells}");
+            Console.WriteLine($"Generation number: {generationNumber}");
         }
 
         private static int AliveCellsInGrid(bool[,] grid)
