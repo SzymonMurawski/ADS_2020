@@ -24,6 +24,8 @@ namespace GameOfLife
                 Thread.Sleep(1000/FPS);
                 grid = CalculateNewGeneration(grid);
                 DisplayGrid(grid);
+                if (AliveCellsInGrid(grid) <= 0)
+                    break;
             }
         }
 
@@ -64,6 +66,20 @@ namespace GameOfLife
                 Console.WriteLine("");
             }
             Console.WriteLine($"Alive cells: {aliveCells}");
+        }
+
+        private static int AliveCellsInGrid(bool[,] grid)
+        {
+            int aliveCells = 0;
+            for (int x = 0; x < 20; x++)
+            {
+                for (int y = 0; y < 20; y++)
+                {
+                    if (grid[x, y])
+                        aliveCells++;
+                }
+            }
+            return aliveCells;
         }
 
         public static int GetAliveNeighboursCount(int x,int y,bool [,] grid)
