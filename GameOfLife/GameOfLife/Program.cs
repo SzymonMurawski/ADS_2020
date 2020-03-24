@@ -14,16 +14,9 @@ namespace GameOfLife
             Console.WriteLine("Welcome to Convay’s Game of Life!");
             bool[,] grid = new bool[20, 20];
             grid[1, 1] = true;
-            for(int x= 0;x <20; x++)
-            {
-                for (int y = 0; y < 20; y++)
-                {
-                    Console.Write(grid[x,y] ? "X" : ".");
-                }
-                Console.WriteLine("");
-            }
+            DisplayGrid(grid);
             Console.WriteLine("Alive neigbours for 2,1 = " +
-                GetAliveNeighboursCount(2,1,grid));
+                GetAliveNeighboursCount(2, 1, grid));
             Console.WriteLine("Alive neigbours for 0,1 = " +
                 GetAliveNeighboursCount(0, 1, grid));
             bool[,] grid2 = new bool[20, 20];
@@ -32,9 +25,9 @@ namespace GameOfLife
                 for (int y = 0; y < 20; y++)
                 {
                     int AliveNeighbours = GetAliveNeighboursCount(x, y, grid);
-                    if (grid[x,y] == true)
+                    if (grid[x, y] == true)
                     {
-                        if(AliveNeighbours == 2)
+                        if (AliveNeighbours == 2)
                         {
                             grid2[x, y] = true;
                         }
@@ -48,24 +41,31 @@ namespace GameOfLife
                         if (AliveNeighbours == 3)
                         {
                             grid2[x, y] = true;
-                        } else
+                        }
+                        else
                         {
                             grid2[x, y] = false;
                         }
                     }
                 }
-    
+
             }
             Console.WriteLine("Next generation");
+            DisplayGrid(grid2);
+        }
+
+        private static void DisplayGrid(bool[,] grid)
+        {
             for (int x = 0; x < 20; x++)
             {
                 for (int y = 0; y < 20; y++)
                 {
-                    Console.Write(grid2[x, y] ? "X" : ".");
+                    Console.Write(grid[x, y] ? "X" : ".");
                 }
                 Console.WriteLine("");
             }
         }
+
         public static int GetAliveNeighboursCount(int x,int y,bool [,] grid)
         {
             int count = 0;
