@@ -22,7 +22,6 @@ namespace GameOfLife
             for(int i = 0; i < 100; i++)
             {
                 Thread.Sleep(1000/FPS);
-                Console.WriteLine("Next generation");
                 grid = CalculateNewGeneration(grid);
                 DisplayGrid(grid);
             }
@@ -53,14 +52,18 @@ namespace GameOfLife
         private static void DisplayGrid(bool[,] grid)
         {
             Console.Clear();
+            int aliveCells = 0;
             for (int x = 0; x < 20; x++)
             {
                 for (int y = 0; y < 20; y++)
                 {
                     Console.Write(grid[x, y] ? "X" : ".");
+                    if (grid[x, y])
+                        aliveCells++;
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine($"Alive cells: {aliveCells}");
         }
 
         public static int GetAliveNeighboursCount(int x,int y,bool [,] grid)
