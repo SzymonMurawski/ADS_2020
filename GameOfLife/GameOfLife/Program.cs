@@ -15,7 +15,7 @@ namespace GameOfLife
             bool[,] grid = new bool[20, 20];
             Console.WriteLine("Welcome to Convay’s Game of Life!");
             Console.Write("How many random alive cells should be placed: ");
-            int initialAliveCellsCount = Console.Read();
+            int initialAliveCellsCount = Convert.ToInt32(Console.ReadLine()); ;
             Random generator = new Random();
             for (int i = 0; i < initialAliveCellsCount; i++)
             {
@@ -23,8 +23,9 @@ namespace GameOfLife
                 int y = generator.Next(20);
                 grid[x, y] = true;
             }
+            PutGlider(grid, 5,5);
             DisplayGrid(grid, 0);
-            const int FPS = 24; // Frames per second
+            const int FPS = 1; // Frames per second
             for(int i = 1; i < 100; i++)
             {
                 Thread.Sleep(1000/FPS);
@@ -33,6 +34,16 @@ namespace GameOfLife
                 if (AliveCellsInGrid(grid) <= 0)
                     break;
             }
+        }
+
+        private static void PutGlider(bool[,] grid, int x, int y)
+        {
+            grid[x, y - 1] = true;
+            grid[x + 1, y] = true;
+            grid[x - 1, y + 1] = true;
+            grid[x, y + 1] = true;
+            grid[x + 1, y + 1] = true;
+
         }
 
         private static bool[,] CalculateNewGeneration(bool[,] grid)
