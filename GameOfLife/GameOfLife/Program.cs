@@ -19,7 +19,14 @@ namespace GameOfLife
                 GetAliveNeighboursCount(2, 1, grid));
             Console.WriteLine("Alive neigbours for 0,1 = " +
                 GetAliveNeighboursCount(0, 1, grid));
-            bool[,] grid2 = new bool[20, 20];
+            bool[,] grid2 = CalculateNewGeneration(grid);
+            Console.WriteLine("Next generation");
+            DisplayGrid(grid2);
+        }
+
+        private static bool[,] CalculateNewGeneration(bool[,] grid)
+        {
+            bool[,] newGrid = new bool[20, 20];
             for (int x = 0; x < 20; x++)
             {
                 for (int y = 0; y < 20; y++)
@@ -27,31 +34,16 @@ namespace GameOfLife
                     int AliveNeighbours = GetAliveNeighboursCount(x, y, grid);
                     if (grid[x, y] == true)
                     {
-                        if (AliveNeighbours == 2)
-                        {
-                            grid2[x, y] = true;
-                        }
-                        else
-                        {
-                            grid2[x, y] = false;
-                        }
+                        newGrid[x, y] = AliveNeighbours == 2;
                     }
                     else
                     {
-                        if (AliveNeighbours == 3)
-                        {
-                            grid2[x, y] = true;
-                        }
-                        else
-                        {
-                            grid2[x, y] = false;
-                        }
+                        newGrid[x, y] = AliveNeighbours == 3;
                     }
                 }
 
             }
-            Console.WriteLine("Next generation");
-            DisplayGrid(grid2);
+            return newGrid;
         }
 
         private static void DisplayGrid(bool[,] grid)
