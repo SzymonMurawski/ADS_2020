@@ -56,7 +56,7 @@ namespace GameOfLife
                     int AliveNeighbours = GetAliveNeighboursCount(x, y, grid);
                     if (grid[x, y] == true)
                     {
-                        newGrid[x, y] = AliveNeighbours == 2;
+                        newGrid[x, y] = AliveNeighbours == 2 || AliveNeighbours == 3;
                     }
                     else
                     {
