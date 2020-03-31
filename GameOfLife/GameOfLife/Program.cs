@@ -20,13 +20,21 @@ namespace GameOfLife
             {
                 int x = generator.Next(20);
                 int y = generator.Next(20);
-                grid[x, y] = true;
+                int randomPatternIndex = generator.Next(4);
+                switch (randomPatternIndex)
+                {
+                    case 0:
+                        PutGlider(grid, x, y); break;
+                    case 1:
+                        PutBlock(grid, x, y); break;
+                    case 2:
+                        PutTub(grid, x, y); break;
+                    default:
+                        PutCell(grid, x, y); break;
+                }
             }
-            PutGlider(grid, 5,5);
-            PutBlock(grid, 3,17);
-            PutTub(grid, 17,3);
             DisplayGrid(grid, 0);
-            const int FPS = 1; // Frames per second
+            const int FPS = 24; // Frames per second
             for(int i = 1; i < 100; i++)
             {
                 Thread.Sleep(1000/FPS);
