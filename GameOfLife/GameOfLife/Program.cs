@@ -47,25 +47,28 @@ namespace GameOfLife
 
         private static void PutGlider(bool[,] grid, int x, int y)
         {
-            grid[x, y - 1] = true;
-            grid[x + 1, y] = true;
-            grid[x - 1, y + 1] = true;
-            grid[x, y + 1] = true;
-            grid[x + 1, y + 1] = true;
+            int n = 20;
+            grid[x, (y - 1 + n) % n] = true;
+            grid[(x + 1) % n, y] = true;
+            grid[(x - 1 + n) % n, (y + 1) % n] = true;
+            grid[x, (y + 1) % n] = true;
+            grid[(x + 1) % n, (y + 1) % n] = true;
         }
         private static void PutBlock(bool[,] grid, int x, int y)
         {
+            int n = 20;
             grid[x, y] = true;
-            grid[x + 1, y] = true;
-            grid[x, y + 1] = true;
-            grid[x + 1, y + 1] = true;
+            grid[(x + 1) % n, y] = true;
+            grid[x, (y + 1) % n] = true;
+            grid[(x + 1) % n, (y + 1) % n] = true;
         }
         private static void PutTub(bool[,] grid, int x, int y)
         {
-            grid[x - 1, y] = true;
-            grid[x + 1, y] = true;
-            grid[x, y - 1] = true;
-            grid[x, y + 1] = true;
+            int n = 20;
+            grid[(x - 1 + n) % n, y] = true;
+            grid[(x + 1) % n, y] = true;
+            grid[x, (y - 1 + n) % n] = true;
+            grid[x, (y + 1) % n] = true;
         }
         private static void PutCell(bool[,] grid, int x, int y)
         {
