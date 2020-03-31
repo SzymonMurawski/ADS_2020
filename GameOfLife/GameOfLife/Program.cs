@@ -9,6 +9,10 @@ namespace GameOfLife
 {
     class Program
     {
+        delegate void PutShape(bool[,] grid, int x, int y);
+        static PutShape[] Putters = new PutShape[] {
+            PutGlider, PutBlock, PutCell, PutTub
+        };
         static void Main(string[] args)
         {
             bool[,] grid = new bool[20, 20];
@@ -20,18 +24,7 @@ namespace GameOfLife
             {
                 int x = generator.Next(20);
                 int y = generator.Next(20);
-                int randomPatternIndex = generator.Next(4);
-                switch (randomPatternIndex)
-                {
-                    case 0:
-                        PutGlider(grid, x, y); break;
-                    case 1:
-                        PutBlock(grid, x, y); break;
-                    case 2:
-                        PutTub(grid, x, y); break;
-                    default:
-                        PutCell(grid, x, y); break;
-                }
+                Putters[generator.Next(Putters.Length)](grid, x, y);
             }
             DisplayGrid(grid, 0);
             const int FPS = 24; // Frames per second
