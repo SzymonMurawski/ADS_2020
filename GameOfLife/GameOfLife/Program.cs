@@ -9,7 +9,6 @@ namespace GameOfLife
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             bool[,] grid = new bool[20, 20];
@@ -24,6 +23,8 @@ namespace GameOfLife
                 grid[x, y] = true;
             }
             PutGlider(grid, 5,5);
+            PutBlock(grid, 3,17);
+            PutTub(grid, 17,3);
             DisplayGrid(grid, 0);
             const int FPS = 1; // Frames per second
             for(int i = 1; i < 100; i++)
@@ -43,7 +44,24 @@ namespace GameOfLife
             grid[x - 1, y + 1] = true;
             grid[x, y + 1] = true;
             grid[x + 1, y + 1] = true;
-
+        }
+        private static void PutBlock(bool[,] grid, int x, int y)
+        {
+            grid[x, y] = true;
+            grid[x + 1, y] = true;
+            grid[x, y + 1] = true;
+            grid[x + 1, y + 1] = true;
+        }
+        private static void PutTub(bool[,] grid, int x, int y)
+        {
+            grid[x - 1, y] = true;
+            grid[x + 1, y] = true;
+            grid[x, y - 1] = true;
+            grid[x, y + 1] = true;
+        }
+        private static void PutCell(bool[,] grid, int x, int y)
+        {
+            grid[x, y] = true;
         }
 
         private static bool[,] CalculateNewGeneration(bool[,] grid)
