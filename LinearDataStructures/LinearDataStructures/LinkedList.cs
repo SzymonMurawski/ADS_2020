@@ -8,6 +8,8 @@ namespace LinearDataStructures
 {
     class LinkedList
     {
+        public LinkedListNode First { get; set; }
+        public LinkedListNode Last { get; set; }
         public int Count { get; set; }
     }
 }
