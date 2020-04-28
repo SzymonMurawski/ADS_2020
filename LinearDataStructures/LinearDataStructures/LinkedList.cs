@@ -23,6 +23,10 @@ namespace LinearDataStructures
             LinkedListNode NewNode = new LinkedListNode(data, First);
             First = NewNode;
             Count++;
+            if(Last == null)
+            {
+                Last = NewNode;
+            }
         }
     }
 }
