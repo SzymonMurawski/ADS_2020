@@ -14,6 +14,10 @@ namespace LinearDataStructures
             ll.AddAtStart(1123);
             ll.AddAtStart(233);
             ll.AddAtStart(128);
+            ll.RemoveFromStart();
+            ll.RemoveFromStart();
+            ll.RemoveFromStart();
+            ll.RemoveFromStart();
         }
     }
 }

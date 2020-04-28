@@ -28,5 +28,10 @@ namespace LinearDataStructures
                 Last = NewNode;
             }
         }
+        public void RemoveFromStart()
+        {
+            First = First.Next;
+            Count--;
+        }
     }
 }
