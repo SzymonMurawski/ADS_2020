@@ -30,6 +30,11 @@ namespace LinearDataStructures
         }
         public void RemoveFromStart()
         {
+            // Check if list is empty
+            if(First == null)
+            {
+                return;
+            }
             First = First.Next;
             Count--;
         }
