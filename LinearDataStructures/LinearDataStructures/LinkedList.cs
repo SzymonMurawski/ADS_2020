@@ -38,5 +38,28 @@ namespace LinearDataStructures
             First = First.Next;
             Count--;
         }
+        public void AddAtEnd(int data)
+        {
+
+        }
+        public void RemoveFromEnd()
+        {
+
+        }
+        // Remove all elements from list
+        public void Clear()
+        {
+
+        }
+
+        public LinkedListNode Search(int data)
+        {
+            return new LinkedListNode(0, null);
+        }
+
+        public void AddAfterElement(int data, int previousData)
+        {
+
+        }
     }
 }
