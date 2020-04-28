@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace LinearDataStructures
 {
-    class Program
+    class LinkedList
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        public int Count { get; set; }
     }
 }
