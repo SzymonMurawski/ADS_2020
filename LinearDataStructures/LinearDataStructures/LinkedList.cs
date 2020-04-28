@@ -11,5 +11,11 @@ namespace LinearDataStructures
         public LinkedListNode First { get; set; }
         public LinkedListNode Last { get; set; }
         public int Count { get; set; }
+        public LinkedList()
+        {
+            First = null;
+            Last = null;
+            Count = 0;
+        }
     }
 }

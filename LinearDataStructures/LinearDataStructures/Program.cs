@@ -10,7 +10,7 @@ namespace LinearDataStructures
     {
         static void Main(string[] args)
         {
-            
+
         }
     }
 }
