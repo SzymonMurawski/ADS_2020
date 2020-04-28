@@ -17,5 +17,12 @@ namespace LinearDataStructures
             Last = null;
             Count = 0;
         }
+        // This function will insert new element at the start of the linked list
+        public void AddAtStart(int data)
+        {
+            LinkedListNode NewNode = new LinkedListNode(data, First);
+            First = NewNode;
+            Count++;
+        }
     }
 }
