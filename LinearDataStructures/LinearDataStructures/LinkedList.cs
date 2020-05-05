@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinearDataStructures
 {
-    public class LinkedList
+    class LinkedList
     {
         public LinkedListNode First { get; set; }
         public LinkedListNode Last { get; set; }
@@ -18,7 +18,7 @@ namespace LinearDataStructures
             Count = 0;
         }
         // This function will insert new element at the start of the linked list
-        public void AddAtStart(int data)
+        public void AddFirst(int data)
         {
             LinkedListNode NewNode = new LinkedListNode(data, First);
             First = NewNode;
@@ -28,7 +28,7 @@ namespace LinearDataStructures
                 Last = NewNode;
             }
         }
-        public void RemoveFromStart()
+        public void RemoveFirst()
         {
             // Check if list is empty
             if(First == null)
@@ -38,28 +38,14 @@ namespace LinearDataStructures
             First = First.Next;
             Count--;
         }
-        public void AddAtEnd(int data)
+        public void AddLast(int data)
         {
 
         }
-        public void RemoveFromEnd()
-        {
-
-        }
-        // Remove all elements from list
-        public void Clear()
+        public void RemoveLast()
         {
 
         }
 
-        public LinkedListNode Search(int data)
-        {
-            return new LinkedListNode(0, null);
-        }
-
-        public void AddAfterElement(int data, int previousData)
-        {
-
-        }
     }
 }

@@ -11,14 +11,14 @@ namespace LinearDataStructures
         static void Main(string[] args)
         {
             LinkedList ll = new LinkedList();
-            ll.RemoveFromStart();
-            ll.AddAtStart(1123);
-            ll.AddAtStart(233);
-            ll.AddAtStart(128);
-            ll.RemoveFromStart();
-            ll.RemoveFromStart();
-            ll.RemoveFromStart();
-            ll.RemoveFromStart();
+            ll.RemoveFirst();
+            ll.AddFirst(1123);
+            ll.AddFirst(233);
+            ll.AddFirst(128);
+            ll.RemoveFirst();
+            ll.RemoveFirst();
+            ll.RemoveFirst();
+            ll.RemoveFirst();
         }
     }
 }
