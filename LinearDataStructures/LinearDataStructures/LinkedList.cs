@@ -40,7 +40,17 @@ namespace LinearDataStructures
         }
         public void AddLast(int data)
         {
-
+            LinkedListNode NewNode = new LinkedListNode(data, null);
+            if(Last == null) // there are no elements in List
+            {
+                First = NewNode;
+                Last = NewNode;
+            } else // there are some elements in our list
+            {
+                Last.Next = NewNode;
+                Last = NewNode;
+            }
+            Count++;
         }
         public void RemoveLast()
         {
