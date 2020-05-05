@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LinearDataStructures;
 
-namespace LinearDataStructuresTests
+namespace UnitTestProject1
 {
     [TestClass]
-    public class LinkedListsTests
+    public class UnitTest1
     {
         [TestMethod]
         public void TestMethod1()

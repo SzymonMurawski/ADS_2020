@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearDataStructures", "LinearDataStructures\LinearDataStructures.csproj", "{FB84E319-24FE-40B6-87F2-8F0172BF4B86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{CE8C1FCB-C766-47DB-A2EA-5FED40174882}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FB84E319-24FE-40B6-87F2-8F0172BF4B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB84E319-24FE-40B6-87F2-8F0172BF4B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB84E319-24FE-40B6-87F2-8F0172BF4B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8C1FCB-C766-47DB-A2EA-5FED40174882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8C1FCB-C766-47DB-A2EA-5FED40174882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8C1FCB-C766-47DB-A2EA-5FED40174882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8C1FCB-C766-47DB-A2EA-5FED40174882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
