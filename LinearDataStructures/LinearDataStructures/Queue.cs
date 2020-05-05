@@ -22,7 +22,10 @@ namespace LinearDataStructures
         }
         public int Dequeue()
         {
-            throw new NotImplementedException();
+            int data = List.First.Data;
+            List.RemoveFirst();
+            Count--;
+            return data;
         }
         public int Peek()
         {
