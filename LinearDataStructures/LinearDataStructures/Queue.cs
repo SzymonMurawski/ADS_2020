@@ -17,7 +17,8 @@ namespace LinearDataStructures
         }
         public void Enqueue(int data)
         {
-            throw new NotImplementedException();
+            List.AddLast(data);
+            Count++;
         }
         public int Dequeue()
         {
