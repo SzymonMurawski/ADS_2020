@@ -10,7 +10,7 @@ namespace LinearDataStructures
     {
         static void Main(string[] args)
         {
-            LinkedList ll = new LinkedList();
+            LinkedList<int> ll = new LinkedList<int>();
             ll.RemoveFirst();
             ll.AddFirst(1123);
             ll.AddFirst(233);

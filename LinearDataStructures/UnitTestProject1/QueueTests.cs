@@ -10,7 +10,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestEnqueue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             queue.Enqueue(11);
             Assert.AreEqual(1, queue.Count);
             queue.Enqueue(12);
@@ -19,7 +19,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestDequeue()
         {
-            Queue queue = new Queue();
+            Queue<int> queue = new Queue<int>();
             queue.Enqueue(11);
             queue.Enqueue(12);
             int element = queue.Dequeue();

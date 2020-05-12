@@ -10,7 +10,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestAddFirst()
         {
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
             list.AddFirst(13);
             Assert.AreEqual(1, list.Count);
             Assert.AreEqual(13, list.First.Data);
@@ -23,7 +23,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestAddLast()
         {
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
             list.AddLast(13);
             Assert.AreEqual(1, list.Count);
             Assert.AreEqual(13, list.First.Data);

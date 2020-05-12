@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace LinearDataStructures
 {
-    public class Queue
+    public class Queue<GenericType>
     {
-        private LinkedList List { get; set; }
+        private LinkedList<GenericType> List { get; set; }
         // public int Count { get; set; }
         public int Count { get { return List.Count; } }
         public Queue()
         {
-            List = new LinkedList();
+            List = new LinkedList<GenericType>();
         }
-        public void Enqueue(int data)
+        public void Enqueue(GenericType data)
         {
             List.AddLast(data);
         }
-        public int Dequeue()
+        public GenericType Dequeue()
         {
-            int data = List.First.Data;
+            GenericType data = List.First.Data;
             List.RemoveFirst();
             return data;
         }

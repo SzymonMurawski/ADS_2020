@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LinearDataStructures
 {
-    public class LinkedListNode
+    public class LinkedListNode<GenericType>
     {
-        public int Data { get; set; }
-        public LinkedListNode Next { get; set; }
-        public LinkedListNode(int data, LinkedListNode next)
+        public GenericType Data { get; set; }
+        public LinkedListNode<GenericType> Next { get; set; }
+        public LinkedListNode(GenericType data, LinkedListNode<GenericType> next)
         {
             Data = data;
             Next = next;

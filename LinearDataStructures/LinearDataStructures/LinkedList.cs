@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LinearDataStructures
 {
-    public class LinkedList
+    public class LinkedList<GenericType>
     {
-        public LinkedListNode First { get; set; }
-        public LinkedListNode Last { get; set; }
+        public LinkedListNode<GenericType> First { get; set; }
+        public LinkedListNode<GenericType> Last { get; set; }
         public int Count { get; set; }
         public LinkedList()
         {
@@ -18,9 +18,9 @@ namespace LinearDataStructures
             Count = 0;
         }
         // This function will insert new element at the start of the linked list
-        public void AddFirst(int data)
+        public void AddFirst(GenericType data)
         {
-            LinkedListNode NewNode = new LinkedListNode(data, First);
+            LinkedListNode<GenericType> NewNode = new LinkedListNode<GenericType>(data, First);
             First = NewNode;
             Count++;
             if(Last == null)
@@ -38,9 +38,9 @@ namespace LinearDataStructures
             First = First.Next;
             Count--;
         }
-        public void AddLast(int data)
+        public void AddLast(GenericType data)
         {
-            LinkedListNode NewNode = new LinkedListNode(data, null);
+            LinkedListNode<GenericType> NewNode = new LinkedListNode<GenericType>(data, null);
             if(Last == null) // there are no elements in List
             {
                 First = NewNode;
