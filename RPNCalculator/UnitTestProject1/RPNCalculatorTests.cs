@@ -21,5 +21,13 @@ namespace UnitTestProject1
             double result = calc.EvaluatePostfix("2 3 +");
             Assert.AreEqual(5, result);
         }
+
+        [TestMethod]
+        public void SimpleMultiplication()
+        {
+            Calculator calc = new Calculator();
+            double result = calc.EvaluatePostfix("5 4 *");
+            Assert.AreEqual(20, result);
+        }
     }
 }
