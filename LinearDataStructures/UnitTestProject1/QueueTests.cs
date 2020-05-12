@@ -29,5 +29,12 @@ namespace UnitTestProject1
             Assert.AreEqual(0, queue.Count);
             Assert.AreEqual(12, element);
         }
+        [TestMethod]
+        public void TestStringsQueue()
+        {
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("Szymon");
+            Assert.AreEqual("Szymon", queue.Dequeue());
+        }
     }
 }
