@@ -7,8 +7,19 @@ namespace UnitTestProject1
     public class RPNCalculatorTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void SingleNumber()
         {
+            Calculator calc = new Calculator();
+            double result = calc.EvaluatePostfix("5");
+            Assert.AreEqual(5, result);
+        }
+
+        [TestMethod]
+        public void SimpleAddition()
+        {
+            Calculator calc = new Calculator();
+            double result = calc.EvaluatePostfix("2 3 +");
+            Assert.AreEqual(5, result);
         }
     }
 }
