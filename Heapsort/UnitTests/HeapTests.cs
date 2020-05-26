@@ -100,5 +100,11 @@ namespace UnitTests
             Assert.AreEqual(14, heap.Pop());
             Assert.AreEqual(10, heap.GetRoot());
         }
+        [TestMethod]
+        public void TestCreateHeapSimple()
+        {
+            Heap heap = new Heap(new int[] { 1, 2, 3 });
+            CollectionAssert.AreEqual(new int[] { 3, 2, 1}, heap.Array);
+        }
     }
 }

@@ -11,7 +11,10 @@ namespace Heapsort
         {
             Array = array;
             Size = array.Length;
-            //TODO: implement Floyd's algorithm for creating a heap from an array
+            for (int nodeIndex = Size /2; nodeIndex>=0; nodeIndex--)
+            {
+                SiftDown(nodeIndex);
+            }
         }
 
         public int GetRoot()
