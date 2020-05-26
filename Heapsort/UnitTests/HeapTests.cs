@@ -77,5 +77,28 @@ namespace UnitTests
             Assert.AreEqual(3, heap.GetRightChildValue(2));
             Assert.ThrowsException<IndexOutOfRangeException>(() => heap.GetRightChildValue(7));
         }
+        [TestMethod]
+        public void TestHasLeftChild()
+        {
+            Heap heap = new Heap(new int[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 });
+            Assert.AreEqual(true, heap.HasLeftChild(1));
+            Assert.AreEqual(false, heap.HasLeftChild(5));
+        }
+        [TestMethod]
+        public void TestHasRightChild()
+        {
+            Heap heap = new Heap(new int[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 });
+            Assert.AreEqual(true, heap.HasRightChild(1));
+            Assert.AreEqual(false, heap.HasRightChild(5));
+        }
+        [TestMethod]
+        public void TestPop()
+        {
+            Heap heap = new Heap(new int[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 });
+            Assert.AreEqual(16, heap.Pop());
+            Assert.AreEqual(14, heap.GetRoot());
+            Assert.AreEqual(14, heap.Pop());
+            Assert.AreEqual(10, heap.GetRoot());
+        }
     }
 }
