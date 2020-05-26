@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Heapsort
 {
     public class Heap
@@ -15,6 +10,11 @@ namespace Heapsort
             Array = array;
             Size = array.Length;
             //TODO: implement Floyd's algorithm for creating a heap from an array
+        }
+
+        public int GetRoot()
+        {
+            return Array[0];
         }
     }
 }
