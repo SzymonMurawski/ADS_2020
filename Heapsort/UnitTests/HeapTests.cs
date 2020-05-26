@@ -106,5 +106,13 @@ namespace UnitTests
             Heap heap = new Heap(new int[] { 1, 2, 3 });
             CollectionAssert.AreEqual(new int[] { 3, 2, 1}, heap.Array);
         }
+        [TestMethod]
+        public void TestHeapsort()
+        {
+            int[] array = new int[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 };
+            Heap.Heapsort(array);
+            CollectionAssert.AreEqual(new int[] { 1, 2, 3, 4, 7, 8, 9, 10, 14, 16 }, 
+                array);
+        }
     }
 }

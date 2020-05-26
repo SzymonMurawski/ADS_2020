@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 
 namespace Heapsort
 {
@@ -102,8 +103,8 @@ namespace Heapsort
         public int Pop()
         {
             int output = GetRoot();
+            Swap(0, Size-1);
             Size--;
-            Array[0] = Array[Size];
             SiftDown(0);
             return output;
         }
@@ -137,6 +138,15 @@ namespace Heapsort
             int temp = GetNodeValue(node1Index);
             Array[node1Index] = GetNodeValue(node2Index);
             Array[node2Index] = temp;
+        }
+
+        public static void Heapsort(int[] array)
+        {
+            Heap heap = new Heap(array);
+            while(heap.Size > 0)
+            {
+                heap.Pop();
+            }
         }
     }
 }
