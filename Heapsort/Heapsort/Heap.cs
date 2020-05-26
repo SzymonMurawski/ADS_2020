@@ -28,5 +28,10 @@ namespace Heapsort
         {
             return (nodeIndex - 1) / 2;
         }
+
+        public int GetParentValue(int nodeIndex)
+        {
+            return GetNodeValue(GetParentIndex(nodeIndex));
+        }
     }
 }
