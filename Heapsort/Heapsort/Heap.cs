@@ -33,5 +33,18 @@ namespace Heapsort
         {
             return GetNodeValue(GetParentIndex(nodeIndex));
         }
+
+        public int GetLeftChildIndex(int nodeIndex)
+        {
+            int childIndex = 2 * nodeIndex + 1;
+            if (childIndex < Size)
+            {
+                return childIndex;
+            } else
+            {
+                throw new IndexOutOfRangeException("Index not in heap");
+            }
+           
+        }
     }
 }

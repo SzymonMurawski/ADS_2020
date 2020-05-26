@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Heapsort;
+using System;
 
 namespace UnitTests
 {
@@ -37,6 +38,16 @@ namespace UnitTests
             Assert.AreEqual(14, heap.GetParentValue(3));
             Assert.AreEqual(7, heap.GetParentValue(9));
             Assert.AreEqual(10, heap.GetParentValue(6));
+        }
+
+        [TestMethod]
+        public void TestGetLeftChildIndex()
+        {
+            Heap heap = new Heap(new int[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 });
+            Assert.AreEqual(3, heap.GetLeftChildIndex(1));
+            Assert.AreEqual(7, heap.GetLeftChildIndex(3));
+            Assert.AreEqual(5, heap.GetLeftChildIndex(2));
+            Assert.ThrowsException<IndexOutOfRangeException>(() => heap.GetLeftChildIndex(7));
         }
     }
 }
