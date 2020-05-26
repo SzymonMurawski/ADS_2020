@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Heapsort
 {
     public class Heap
@@ -14,7 +16,12 @@ namespace Heapsort
 
         public int GetRoot()
         {
-            return Array[0];
+            return GetNodeValue(0);
+        }
+
+        public int GetNodeValue(int nodeIndex)
+        {
+            return Array[nodeIndex];
         }
     }
 }
