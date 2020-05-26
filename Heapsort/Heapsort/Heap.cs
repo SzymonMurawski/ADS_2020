@@ -46,5 +46,10 @@ namespace Heapsort
             }
            
         }
+
+        public int GetLeftChildValue(int nodeIndex)
+        {
+            return GetNodeValue(GetLeftChildIndex(nodeIndex));
+        }
     }
 }

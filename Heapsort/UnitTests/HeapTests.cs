@@ -49,5 +49,14 @@ namespace UnitTests
             Assert.AreEqual(5, heap.GetLeftChildIndex(2));
             Assert.ThrowsException<IndexOutOfRangeException>(() => heap.GetLeftChildIndex(7));
         }
+        [TestMethod]
+        public void TestGetLeftChildValue()
+        {
+            Heap heap = new Heap(new int[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 });
+            Assert.AreEqual(8, heap.GetLeftChildValue(1));
+            Assert.AreEqual(2, heap.GetLeftChildValue(3));
+            Assert.AreEqual(9, heap.GetLeftChildValue(2));
+            Assert.ThrowsException<IndexOutOfRangeException>(() => heap.GetLeftChildValue(7));
+        }
     }
 }
